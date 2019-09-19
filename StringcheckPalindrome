@@ -1,0 +1,12 @@
+function checkPalindrome(inputString){
+    let reverse = "";
+    let result =  false;
+    for(let i = inputString.length-1;i>=0;i--){
+        reverse = reverse.concat(inputString.charAt(i));
+    }
+    if(reverse === inputString){
+        result = true;
+    }
+    return result;
+}
+checkPalindrome("acbca")
