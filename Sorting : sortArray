@@ -1,0 +1,5 @@
+function sortArray(arr){
+      arr.sort((a,b)=> a-b);
+      return arr;
+}
+sortArray([100, 100, 99, 98, 102, 103]);
