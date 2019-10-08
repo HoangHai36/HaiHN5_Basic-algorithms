@@ -1,0 +1,25 @@
+function sumStr(value){
+  let str = "";
+  str = str.concat(value);
+  let arr = str.split("");
+  let sum = arr.reduce((a,b)=> {return parseInt(a)+parseInt(b)},0);
+  return sum;
+}
+
+function digitalSumSort(a){
+  for(let i = 0; i < a.length - 1; i++){
+    for(let j = a.length - 1; j > i; j--){
+      if(sumStr(a[j]) < sumStr(a[j-1])){
+        let t = a[j];
+        a[j] = a[j - 1];
+        a[j - 1] = t;
+      } else if(sumStr(a[j]) === sumStr(a[j-1]) && a[j]< a[j-1]){
+        let t = a[j];
+        a[j] = a[j - 1];
+        a[j - 1] = t;
+      }
+    }
+  }
+  return a;
+}
+digitalSumSort([100, 22, 4, 11, 31, 103]);
