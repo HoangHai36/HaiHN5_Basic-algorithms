@@ -1,0 +1,25 @@
+
+function searchElement(a, n){
+  if(a.length == 0){
+    return -1;
+  }
+  let newArr = [];
+  for(let i = 0; i<a.length;i++){
+    if(newArr.indexOf(a[i]) == -1){
+      newArr.push(a[i]);
+    }
+  }
+  if(n> newArr.length || n<= 0 ){
+      return -1;
+  }
+  newArr.sort((x,y)=>{return x-y});
+  return newArr[n-1];
+}
+function searchElement02(a, k){
+  let arr = [];
+  for(let i =0; i<a.length; i++){
+    arr = arr.concat(a[i]);
+  }
+  return searchElement(arr,k);
+}
+searchElement02([[ 51, 158, 178],[275, 309, 390],[491, 797, 941]], 3);
