@@ -1,0 +1,18 @@
+function arrayofThreeElements(a, n){
+  let arr = [];
+  let truoc, giua ,sau;
+  for(let i = 0; i < n ;i++) {
+    if(a[i-1] == undefined){
+      truoc = 0
+    } else {truoc = a[i-1]}
+     if(a[i] == undefined){
+      giua = 0
+    } else {giua = a[i]}
+     if(a[i+1] == undefined){
+      sau = 0
+    } else {sau = a[i+1]}
+    arr.push(truoc+giua+sau);
+  }
+  return arr;
+}
+arrayofThreeElements([4, 0, 1, -2, 3],5);
